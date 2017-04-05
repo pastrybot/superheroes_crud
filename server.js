@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require('path');
 var Superhero = require('./models/superhero');
 var Villain = require('./models/villains')
 var app = express();
@@ -12,6 +13,19 @@ mongoose.connect("mongodb://localhost/superheroes");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'views'));
+
+app.get('/', function(req, res){
+  res.render('index')
+});
+app.get('/heroes', function(req, res){
+  res.render('heroes')
+});
+app.get('/antiHeroes', function(req, res){
+  res.render('antiHeroes')
+});
 
 
 //return all superheroes

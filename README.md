@@ -28,4 +28,8 @@ create DELETE method using remove.
       console.log(err)
     }else{
       res.send('Superhero deleted!')
-    }``
+    }
+    ```
+
+Add EJS(npm install --save ejs)
+create index.ejs
