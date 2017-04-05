@@ -32,4 +32,25 @@ create DELETE method using remove.
     ```
 
 Add EJS(npm install --save ejs)
-create index.ejs
+create the rest of your page paths(ejs)
+in this case we created a heroes.ejs, and a antiHeroes.ejs
+
+then create our public directory containing our hero.js and style.css(static)
+
+Link all of our ejs files to our style.css, and the LAST script tag is linking to our .js file:
+``<script src="hero.js"></script>``
+
+
+NOW in our hero.js file we start with the vue to render our stuff: FETCH!
+with .fetch, we attach our database(from postman) to our hero.js
+Since I don't really understand what happened, I will copy and paste!
+``//get request from our superheroes database
+fetch('/superheroes')//brings in our get METHOD
+.then(function(blob){
+  return blob.json();
+})
+.then(function(data){
+  console.table(data);
+  sampleVue.heroes=data;
+});
+``
