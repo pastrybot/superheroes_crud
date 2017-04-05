@@ -41,11 +41,11 @@ Link all of our ejs files to our style.css, and the LAST script tag is linking t
 ``<script src="hero.js"></script>``
 
 
-NOW in our hero.js file we start with the vue to render our stuff: FETCH!
+NOW in our hero.js file we start with a sample vue to test how to render our stuff: FETCH!
 with .fetch, we attach our database(from postman) to our hero.js
 Since I don't really understand what happened, I will copy and paste!
 ``//get request from our superheroes database
-fetch('/superheroes')//brings in our get METHOD
+fetch('/api/superheroes')//brings in our get METHOD
 .then(function(blob){
   return blob.json();
 })

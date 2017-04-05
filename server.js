@@ -31,7 +31,7 @@ app.get('/antiHeroes', function(req, res){
 
 
 //return all superheroes
-app.get('/superheroes', function(req, res){
+app.get('/api/superheroes', function(req, res){
   Superhero.find(function(err, data){
     if(err){
       console.log('You have an error!');
@@ -87,7 +87,7 @@ app.post('/villains', function(req, res){
 });
 
 
-app.get('/superheroes/:superhero_id', function(req, res){
+app.get('/api/superheroes/:superhero_id', function(req, res){
   Superhero.findById(req.params.superhero_id, function(err, data){
     if(err){
       console.log(err);

@@ -8,7 +8,7 @@ var sampleVue = new Vue({
   },
 });
 //get request from our superheroes database
-fetch('/superheroes')//brings in our get METHOD
+fetch('/api/superheroes')//brings in our get METHOD
 .then(function(blob){
   return blob.json();
 })
