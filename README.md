@@ -43,9 +43,12 @@ Link all of our ejs files to our style.css, and the LAST script tag is linking t
 
 NOW in our hero.js file we start with a sample vue to test how to render our stuff: FETCH!
 with .fetch, we attach our database(from postman) to our hero.js
-Since I don't really understand what happened, I will copy and paste!
+
+
 ``//get request from our superheroes database
-fetch('/api/superheroes')//brings in our get METHOD
+//like making an ajax call.  Attaches client to database
+fetch('/api/superheroes')
+//brings in our get METHOD
 .then(function(blob){
   return blob.json();
 })

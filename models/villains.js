@@ -4,6 +4,7 @@ var VillainSchema = new mongoose.Schema({
     //schema = blueprint
     name: String,
     superPower: String,
+    universe: String,
     evil: Boolean,
     nemesis: String
 });
