@@ -144,7 +144,30 @@ app.get('/api/villains/:villain_id', function(req, res){
     }
   })
 })
+app.put('/api/villains/:villain_id', function(req, res){
+  Villain.findById(req.params.villain_id, function(err, villain){
 
+  //  if(!hero) return res.status(404).send(err, "Can't find superhero");
+
+
+    villain.name       = req.body.name ? req.body.name : villain.name;
+    //villain object: if we send new name, then it will be the villain's new name, otherwise, stay the same//
+    villain.alias      = req.body.alias ? req.body.alias : villain.alias;
+    villain.superPower = req.body.superPower ? req.body.superPower : villain.superPower;
+    villain.universe   = req.body.universe ? req.body.universe : villain.universe;
+    villain.evil       = req.body.evil ? req.body.evil : villain.evil;
+    villain.rank       = req.body.rank ? req.body.rank : villain.rank;
+    villain.img        = req.body.img ? req.body.img : villain.img;
+
+    villain.save(function(e){
+      if(e){
+        res.status(500).send(e);
+      }else{
+        res.json(villain);
+      }
+    });
+  })
+})
 
 app.delete('/api/villains/:villain_id', function(req, res){
   Villain.remove({_id: req.params.villain_id}, function(err){

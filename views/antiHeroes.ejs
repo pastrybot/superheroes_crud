@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>Villains</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -19,12 +19,22 @@
         <a class="btn btn-primary btn-lg" href="#" role="button">Let's see those tight tights</a>
       </p>
     </div>
-
+    <div id="component">
+      <div v-for="villain in villains" class = "hero-panel">
+        <h3>{{villain.name}}</h3>
+        <img class="villain-img":src="villain.img"/>
+        <ul>
+          <li>{{villain.universe}}</li>
+          <li>{{villain.rank}}</li>
+          <li>{{villain.superPower}}</li>
+        </ul>
+      </div>
+    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue"></script>
-    <script type="text/javascript"></script>
+    <script type="text/javascript" src="antihero.js"> </script>
   </body>
 </html>

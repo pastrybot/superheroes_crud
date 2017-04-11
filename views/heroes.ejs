@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>Superheroes</title>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -16,29 +16,29 @@
       <h1 class="display-3">We are the good guys!</h1>
       <p class="lead">A thoughtfully prepared list of our favorite superheroes, not just from comic books</p>
       <hr class="m-y-md">
-      <p></p>
       <p class="lead">
         <a class="btn btn-primary btn-lg" href="#" role="button">Show me the leotards!</a>
       </p>
     </div>
-    <!-- <div id="sample">
-      <h3>{{title}}</h3>
-      <ul v-for="n in numbers">
-        <li>{{n}}</li>
-
-      </ul>
-      <h3>{{heroes[7].name}}</h3>
-
-    </div> -->
     <div class="container-fluid">
-      <h4>Hero1</h4>
+      <div id="component">
+        <div v-for="hero in heroes" class = "hero-panel">
+          <h3>{{hero.name}}</h3>
+          <img class="hero-img":src="hero.img"/>
+          <ul>
+            <li>{{hero.universe}}</li>
+            <li>{{hero.rank}}</li>
+            <li>{{hero.superPower}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue"></script>
-    <script src="hero.js"></script>
-    <script type="text/javascript"></script>
-
+    <script type="text/javascript" src="hero.js"></script>
     </script>
   </body>
 </html>
