@@ -1,0 +1,46 @@
+body{
+  background-image: url(http://img.cinemablend.com/filter:scale/cb/1/2/d/c/d/5/12dcd57724f3c02e6f802dda3d56bd09996e236b062a2214f7c97c3e3f17a690.jpg?mw=600);
+}
+
+h1{
+  text-align: center;
+  font-size: 150px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  padding: 200px;
+}
+nav {
+  max-width: 80%;
+  /* The mask-image gives us some extra fading. It is not necessary but without this, you can't face out the box-shadows. This clips our menu */
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  /* Using padding instead of margin for the top and bottom here will keep our box-shadow visible and not affected by the mask-image */
+  padding: 2px 0;
+}
+
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  width: 100%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 20px;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 60px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 0, 0, 0.7);
+}

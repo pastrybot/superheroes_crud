@@ -10,23 +10,30 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="jumbotron">
-      <h1 class="display-3">We are BAD!</h1>
-      <p class="lead">This is a list of some guys who tend to cause problems for the citizens</p>
-      <hr class="m-y-md">
-      <p>.</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Let's see those tight tights</a>
-      </p>
+    <div class="container">
+      <div class=“nav-bar”>
+       <ul class=“nav-bar”>
+         <li><a href=/>Home</a></li>
+         <li><a href=/heroes>Heroes</a></li>
+         <li><a href=/antiheroes>Villains</a></li>
+       </ul>
+      </div>
     </div>
+     <div class=“center-block”>
+       <h1>Bad, Bad Men</h1>
+        <img src="http://i1334.photobucket.com/albums/w652/DLX9/BvS/Batman-Rogues-Gallery-Dragonlord.jpg" class="img-vill" alt="responsive image"/>
+
+      </div>
+
+
     <div id="component">
       <div v-for="villain in villains" class = "hero-panel">
         <h3>{{villain.name}}</h3>
         <img class="villain-img":src="villain.img"/>
-        <ul>
-          <li>{{villain.universe}}</li>
-          <li>{{villain.rank}}</li>
-          <li>{{villain.superPower}}</li>
+        <ol>
+          <h6>{{villain.universe}}</h6>
+          <h6>{{villain.rank}}</h6>
+          <h6>{{villain.superPower}}</h6>
         </ul>
       </div>
     </div>
