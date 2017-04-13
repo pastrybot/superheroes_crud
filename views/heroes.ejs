@@ -12,14 +12,21 @@
 
   </head>
   <body>
-    <div class="jumbotron">
-      <h1 class="display-3">We are the good guys!</h1>
-      <p class="lead">A thoughtfully prepared list of our favorite superheroes, not just from comic books</p>
-      <hr class="m-y-md">
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Show me the leotards!</a>
-      </p>
+    <div class="container">
+      <div class=“nav-bar”>
+       <ul class=“nav-bar”>
+         <li><a href=/>Home</a></li>
+         <li><a href=/heroes>Heroes</a></li>
+         <li><a href=/antiheroes>Villains</a></li>
+       </ul>
+      </div>
     </div>
+     <div class=“center-block”>
+
+        <img src="https://i.ytimg.com/vi/gRydxuW53L0/maxresdefault.jpg" class="img-vill" alt="responsive image"/>
+          <h1>The good guys!</h1>
+      </div>
+
     <div class="container-fluid">
       <div id="component">
         <div v-for="hero in heroes" class = "hero-panel">

@@ -4,12 +4,21 @@ body{
 }
 .center-block{
   display: block;
-  height: 100px;
+  height: 80px;
   width: 80%;
-  text-align: center;
+
 
 }
-div h1{
+img{
+  max-height: 500px;
+  width: 90%;
+}
+h1{
+  text-align: right;
+  padding-right: 69px;
+  font-size: 95px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
 
 }
 ul{
@@ -26,7 +35,7 @@ li {
 
 li a {
    display: block;
-   color: #04e4f2 ;
+   color: #f01616 ;
    text-align: center;
    font-size: 20px;
    font-family: Verdana;
@@ -35,7 +44,7 @@ li a {
 }
 
 li a:hover {
-   background-color: #04e4f2 ;
+   background-color: #f15353 ;
 }
 .img-vill {
  display: block;
@@ -62,11 +71,6 @@ li a:hover {
   max-width: 80%;
 }
 
-.display-3{
-  font-size: 90px;
-  text-shadow: 2px 2px 4px #000000;
-}
-
 .lead{
   color: white;
   text-shadow: 2px 2px 4px #000000;
@@ -87,6 +91,7 @@ h3{
   border-color: black;
 
 }
+
 
 ul{
   list-style: none;
