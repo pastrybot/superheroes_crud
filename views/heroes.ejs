@@ -37,9 +37,18 @@
             <li>{{hero.rank}}</li>
             <li>{{hero.superPower}}</li>
           </ul>
-        </div>
+          <button type='button' v-on:click="deleteHero(hero._id)">DESTROY</button>
       </div>
+      <form class="form" v-on:submit='submitHero'>
+        <div class="form-group">
+          <label>Hero Name</label>
+          <input type="text" placeholder="hero name here" v-model="newName">
+
+        </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+      </form>
     </div>
+  </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

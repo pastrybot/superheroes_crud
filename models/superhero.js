@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 
 var SuperheroSchema = new mongoose.Schema({
     //schema = blueprint
-    name: String,
-    superPowers: {default: [], type: Array},
+    name: { required: true, type: String },
+    superPowers: [{default: [], type: String}],
     universe: String,
     evil: Boolean,
     rank: Number,
@@ -18,7 +18,7 @@ SuperheroSchema.methods.loadData = function(data){
 
 }
 SuperheroSchema.methods.loadPower = function(powerN){
-  
+
   this.superPowers.push(powerN);
 }
 

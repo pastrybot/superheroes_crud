@@ -47,3 +47,5 @@ app.use('/api/superheroes', heroRoutes);
 var server = app.listen(3000, function(){
   console.log('Starting server on port 3000⚡️')
 });
+
+module.exports = app;
