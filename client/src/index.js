@@ -14,7 +14,7 @@ ReactDOM.render(
       <IndexRoute component={Home} />
       <Route path='/home' component={Home}/>
       <Route path='/heroes' component={HeroesContainer}/>
-      <Route path='/post' component={PostHeroContainer}/>
+      <Route path='/heroes/post' component={PostHeroContainer}/>
     </Route>
   </Router>,
 

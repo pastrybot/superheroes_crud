@@ -11,6 +11,7 @@ var SuperheroSchema = new mongoose.Schema({
 });
 SuperheroSchema.methods.loadData = function(data){
   this.name       = data.name ? data.name : this.name;
+  this.superPowers= data.superPowers ? data.superPowers : this.superPowers;
   this.universe   = data.universe ? data.universe : this.universe;
   this.evil       = data.evil ? data.evil : this.evil;
   this.rank       = data.rank ? data.rank : this.rank;
