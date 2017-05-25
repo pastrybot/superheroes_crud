@@ -1,23 +1,21 @@
 var express = require('express');
 var Router = express.Router();
 var Superhero = require('../models/superhero');
+var Note = require ('../models/note');
 var async = require('async');
 
 
 
 Router.route('/')
-  .get(function(req, res) {
-    Superhero.find(function(err, data) {
-      if (err) {
-        res.send(err)
-      } else {
-        res.json({
-          message: 'Found your heroes',
-          data
-        });
-      }
-    });
+  .get((req, res) => {
+    Superhero.find()
+    .populate('notes')//same as we had it named in our routes file
+    .exec((err, data) => {
+      if(err) throw err;
+      res.send({data})
+    })
   });
+
 Router.route('/')
     .post(function(req, res){
       var newSuper = new Superhero();
@@ -59,15 +57,18 @@ Router.route('/multiple-superHeroes')
   });
 
 Router.route('/:superhero_id')
-  .get(function(req, res) {
-    Superhero.findById(req.params.superhero_id, function(err, data) {
+  .get((req, res) => {
+    Superhero.findById(req.params.superhero_id)
+      .populate('notes')
+      .exec((err, data) => {
       if (err) {
-        console.log(err);
+        res.send(err);
       } else {
         res.json(data);
       }
     })
   });
+  //success means when we 'get by id' in postman, we will see the notes field populated
 
 Router.route('/:superhero_id')
   .put(function(req, res) {
@@ -101,6 +102,31 @@ Router.route('/:superhero_id')
       }
     })
   })
+
+//route just for posting notes
+//find a specific hero
+//make a note
+//save note
+//add new note to hero
+//save hero
+
+Router.route('/note/:superhero_id')
+  .post((req, res) => {
+    Superhero.findById(req.params.superhero_id, (err, hero) => {
+      if(err) throw err;
+      const newNote = new Note();
+      newNote.loadData(req.body);
+      newNote.save((err, savedNote) => {
+        if (err) throw err;
+        hero.notes.push(savedNote);
+        hero.save((err, savedHero) => {
+          if(err) throw err;
+          res.send({data: savedHero});
+        })
+      })
+    })
+  })
+
 
 
 module.exports = Router;

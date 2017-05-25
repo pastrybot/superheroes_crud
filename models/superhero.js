@@ -7,8 +7,15 @@ var SuperheroSchema = new mongoose.Schema({
     universe: String,
     evil: Boolean,
     rank: Number,
-    img: String
+    img: String,
+    notes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Note' }]
+    //brackets denote that we're starting reference to something
+    //array is a an array of note model ids
+    //setting type to be mongoose object ID
+    //then next argument sets up what it's referencing i.e. what we called
+    //it in the export in the model the data-type name
 });
+
 SuperheroSchema.methods.loadData = function(data){
   this.name       = data.name ? data.name : this.name;
   this.superPowers= data.superPowers ? data.superPowers : this.superPowers;

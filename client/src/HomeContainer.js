@@ -4,7 +4,7 @@ class HomeContainer extends Component {
   render(){
     return(
       <div>
-        <h1> Hello, from home container! </h1>
+        <h1 className="title"> Hello, from home container! </h1>
       </div>
     )
   }

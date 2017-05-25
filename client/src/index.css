@@ -1,27 +1,70 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Lucida Console", monospace;
+  background-image: url(http://static.tumblr.com/35e65db16ead81f1a70934d0565fcccc/u0trukz/5frn58kfc/tumblr_static_eohd5ukwu9wg0cwowg40s0w4w.jpg);
 }
 
 .nav-flex {
   display: flex;
   justify-content: space-around;
   list-style: none;
-  font-family: sans-serif;
   font-size: 30px;
   height: 55px;
-  background-color: rgb(208, 34, 34);
+
 }
 .active-link {
   font-size:;
   color:;
 }
-.container{
-  border: 2px solid red;
+
+.hero-flex {
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hero-panel{
+  background-image: url(http://wlpapers.com/images/red-textured-background-1.jpg);
+  background-size: cover;
+  border: 1px solid #f2f2f2;
+  width: calc(50% - 25px);
+  margin-top: 15px;
+  text-align: center;
+  box-shadow: 3px 3px 7px black;
+}
+
+.hero-container{
+  border:
 
 }
+.hero-list{
+  font-size: 35px;
+  color:
+}
+.hero-name{
+  font-size: 50px;
+
+}
+li{
+  display:inline-block;
+}
 img{
-  max-width: 25%;
-  max-height: 20%;
+  max-width: 80%;
+}
+
+.title{
+  text-align: center;
+  padding-right: 69px;
+  font-size: 200px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.hero-form{
+
+}
+.edit-hero{
+  color: white;
 }
