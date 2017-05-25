@@ -12,6 +12,8 @@ class HeroesContainer extends Component {
     text: undefined
   }
 
+ loadHeroes = this.loadHeroes.bind(this)
+ submitNote = this.submitNote.bind(this)
  componentDidMount= () => this.loadHeroes()
 
   loadHeroes(){
@@ -26,17 +28,25 @@ class HeroesContainer extends Component {
 
   updateText = (event) => this.setState({ text: event.target.value })
 
-  submitNote = this.submitNote.bind(this)
-  
+
+
   submitNote(event, _id){
     event.preventDefault();
+    if(!this.state.text || this.state.text.length < 1){
+      alert("Please fill out the required field")
+    return
+    }
     let note = {content: this.state.text}
     $.ajax({
       url: `/api/superheroes/note/${_id}`,
       method: 'POST',
       data: note
-    }).done((response) => this.loadHeroes())
+    }).done((response) => {
+      this.setState({text: ""})
+      this.loadHeroes()
     }
+  )
+};
 
     //any time we change text, it will auto-bind, and auto-update with the event-handler
 
@@ -48,6 +58,7 @@ class HeroesContainer extends Component {
           <HeroesList heroes={this.state.heroes}
                       updateText={this.updateText}
                       submitNote={this.submitNote}
+                      text={this.state.text}
                       />
           : <h5>loading...</h5>
         }

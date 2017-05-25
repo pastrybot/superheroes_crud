@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-
+import NotesList from './NotesList';
 
 const HeroesList = (props) => {
  return (
@@ -15,14 +15,19 @@ const HeroesList = (props) => {
                 <ul className='hero-text'>
                   <li>{ item.superPower }</li>
                   <li>{ item.universe }</li>
-                  <li><img key={ index } src={ item.img }/></li>
+                  <li><img key={ index } src={ item.img } alt="hero"/></li>
                 </ul>
                 <div>
                   <label> Add Note </label>
-                  <input type="text" onChange={(event) => props.updateText(event)} placeholder="Type notes here"/>
+                  <input required="true" type="text" value={props.text || ""} onChange={(event) => props.updateText(event)} placeholder="Type notes here"/>
                   <button className="btn btn-success" type="button" onClick={(event) => props.submitNote(event, item._id)}>Submit Note</button>
                 </div>
+                <div>
+                  <NotesList notes={item.notes}/>
+                </div>
+                <div>
                 <Link className="btn btn-warning" to={`/heroes/edit/${item._id}`}>Edit</Link>
+                </div>
             </div>
             )
           }
@@ -30,6 +35,7 @@ const HeroesList = (props) => {
 
       </div>
       </div>
+
     )
   }
 export default HeroesList;
